@@ -1,6 +1,7 @@
 package pl.mc.cities.remote
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import pl.mc.cities.domain.City
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -22,4 +23,12 @@ data class CityRemoteModel(
   val countryName: String?,
   @JsonProperty("adminName1")
   val stateName: String?
-)
+) {
+  fun toCity(): City {
+    return City.create(
+      cityName = requireNotNull(cityName),
+      countryName = requireNotNull(countryName),
+      stateName = requireNotNull(stateName)
+    )
+  }
+}
