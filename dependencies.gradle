@@ -1,0 +1,15 @@
+ext{
+    jacksonVersion = "2.11.2"           //https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
+    jackson = [
+            core       : "com.fasterxml.jackson.core:jackson-core:$jacksonVersion",
+            databind   : "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion",
+            annotations: "com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion",
+            kotlin     : "com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonVersion"
+    ]
+
+    retrofitVersion = "2.9.0"           //https://github.com/square/retrofit/releases
+    retrofit = [
+            core            : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            jacksonConverter: "com.squareup.retrofit2:converter-jackson:$retrofitVersion",
+    ]
+}

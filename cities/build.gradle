@@ -3,6 +3,8 @@ plugins {
     id 'org.jetbrains.kotlin.jvm'
     id 'info.solidsoft.pitest' version '1.7.4'
 }
+apply from: '../dependencies.gradle'
+
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_7
@@ -18,6 +20,14 @@ pitest {
 }
 
 dependencies {
+    implementation retrofit.core
+    implementation retrofit.jacksonConverter
+
+    implementation jackson.core
+    implementation jackson.databind
+    implementation jackson.annotations
+    implementation jackson.kotlin
+
     testImplementation 'junit:junit:4.13.2'
     testImplementation 'org.hamcrest:hamcrest:2.2'
 }
