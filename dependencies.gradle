@@ -1,5 +1,6 @@
-ext{
-    jacksonVersion = "2.11.2"           //https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
+ext {
+    jacksonVersion = "2.11.2"
+    //https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
     jackson = [
             core       : "com.fasterxml.jackson.core:jackson-core:$jacksonVersion",
             databind   : "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion",
@@ -12,4 +13,24 @@ ext{
             core            : "com.squareup.retrofit2:retrofit:$retrofitVersion",
             jacksonConverter: "com.squareup.retrofit2:converter-jackson:$retrofitVersion",
     ]
+
+    mockKVersion = "1.12.5"              //https://mockk.io/
+    mockK = [
+            core: "io.mockk:mockk:$mockKVersion"
+    ]
+
+    okhttp3Version = "4.8.0"            //https://square.github.io/okhttp/#releases
+    okHttp3 = [
+            core              : "com.squareup.okhttp3:okhttp:$okhttp3Version",
+            loggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$okhttp3Version"
+    ]
+
+    coroutinesVersion = "1.6.4"         //https://github.com/Kotlin/kotlinx.coroutines
+    coroutines = [
+            android: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion",
+            core   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion",
+            test   : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion",
+            rx2    : "org.jetbrains.kotlinx:kotlinx-coroutines-rx2:$coroutinesVersion"
+    ]
+
 }

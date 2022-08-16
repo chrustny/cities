@@ -19,6 +19,10 @@ pitest {
     timestampedReports = false
 }
 
+
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
+
 dependencies {
     implementation retrofit.core
     implementation retrofit.jacksonConverter
@@ -27,7 +31,12 @@ dependencies {
     implementation jackson.databind
     implementation jackson.annotations
     implementation jackson.kotlin
+    implementation okHttp3.core
+
 
     testImplementation 'junit:junit:4.13.2'
     testImplementation 'org.hamcrest:hamcrest:2.2'
+    testImplementation mockK.core
+    testImplementation coroutines.test
+
 }

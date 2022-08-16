@@ -3,7 +3,7 @@ package pl.mc.cities.application.query
 import pl.mc.cities.domain.City
 
 interface CitySearchQuery {
-  suspend fun find(query: String): City
+  suspend fun find(query: String): List<City>
 }
 
 class CitySearchQueryException(
