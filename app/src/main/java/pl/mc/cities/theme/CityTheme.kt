@@ -16,6 +16,6 @@ fun CityTheme(content: @Composable () -> Unit) {
 
 private val CityMaterialLightColors = lightColors(
   onSurface = Color(0xFF282622),
-  background = Color(0xFFFAF7F2),
+  background = Color(0xFFFFFFFF),
   primary = Color(0xFF6495ED)
 )
