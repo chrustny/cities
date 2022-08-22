@@ -60,4 +60,7 @@ ext {
             composeManifestTest: "androidx.compose.ui:ui-test-manifest:$composeVersion"
     ]
 
+    okhttp3Version = "4.10.0"            //https://square.github.io/okhttp/#releases
+    okHttpMockWebServer = "com.squareup.okhttp3:mockwebserver:$okhttp3Version"
+
 }
