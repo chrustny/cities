@@ -10,6 +10,8 @@ import kotlinx.coroutines.launch
 import pl.mc.cities.application.query.CitySearchQuery
 import pl.mc.cities.application.query.CitySearchQueryException
 import pl.mc.cities.domain.City
+import pl.mc.cities.domain.Country
+import pl.mc.cities.domain.CountryPriorityCityComparator
 import javax.inject.Inject
 import pl.mc.cities.ui.CountrySearchViewModel.*
 
@@ -41,6 +43,7 @@ class DefaultCountrySearchViewModel @Inject constructor(
     _state.value = State.Loading
     try {
       _cities.value = citySearchQuery.find(query)
+        .sortedWith(CountryPriorityCityComparator(Country("United States")).reversed())
       _state.value = State.Available
     } catch (queryException: CitySearchQueryException) {
       _state.value = State.Error()
