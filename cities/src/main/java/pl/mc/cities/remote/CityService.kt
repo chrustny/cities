@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface CityService {
-  @GET("https://secure.geonames.org/searchJSON?maxRows=10&username=keep_truckin")
+  @GET("searchJSON?maxRows=10&username=keep_truckin")
   suspend fun queryCities(@Query("name_startsWith") query: String) : CitiesResponseRemoteModel
 }
 

@@ -38,5 +38,4 @@ dependencies {
     testImplementation 'org.hamcrest:hamcrest:2.2'
     testImplementation mockK.core
     testImplementation coroutines.test
-
 }

@@ -33,4 +33,31 @@ ext {
             rx2    : "org.jetbrains.kotlinx:kotlinx-coroutines-rx2:$coroutinesVersion"
     ]
 
+    lifecycleVersion = "2.5.1"          //https://developer.android.com/jetpack/androidx/releases/lifecycle
+    lifecycles = [
+            extensions     : "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion",
+            viewModel      : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion",
+    ]
+
+    appCompatVersion = "1.5.0"           //https://developer.android.com/jetpack/androidx/versions
+    androidXCore = "1.8.0"               //https://developer.android.com/jetpack/androidx/releases/core
+    annotationVersion = "1.4.0"         //https://developer.android.com/jetpack/androidx/releases/annotation
+    activityVersion = "1.5.1"   //https://developer.android.com/jetpack/androidx/releases/activity
+    androidLibsDependencies = [
+            appcompat          : "androidx.appcompat:appcompat:$appCompatVersion",
+            activity           : "androidx.activity:activity:$activityVersion",
+            activityKtx        : "androidx.activity:activity-ktx:$activityVersion",
+    ]
+
+    composeVersion = "1.1.1" //https://developer.android.com/jetpack/androidx/releases/compose
+    compose = [
+            composeMaterial    : "androidx.compose.material:material:$composeVersion",
+            composeUi          : "androidx.compose.ui:ui-tooling:$composeVersion",
+            composeAnimation   : "androidx.compose.animation:animation:$composeVersion",
+            composeRuntime     : "androidx.compose.runtime:runtime:$composeVersion",
+            composeActivity    : "androidx.activity:activity-compose:$activityVersion",
+            composeJunitTest   : "androidx.compose.ui:ui-test-junit4:$composeVersion",
+            composeManifestTest: "androidx.compose.ui:ui-test-manifest:$composeVersion"
+    ]
+
 }
