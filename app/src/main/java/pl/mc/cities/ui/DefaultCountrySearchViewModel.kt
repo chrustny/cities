@@ -20,7 +20,7 @@ class DefaultCountrySearchViewModel @Inject constructor(
   private val citySearchQuery: CitySearchQuery
 ) : ViewModel(), CountrySearchViewModel {
 
-  private var _state: MutableStateFlow<State> = MutableStateFlow(State.Loading)
+  private var _state: MutableStateFlow<State> = MutableStateFlow(State.Idle)
   override val state: StateFlow<State> = _state
 
   private var _searchQuery: MutableStateFlow<String> = MutableStateFlow("")
@@ -46,7 +46,7 @@ class DefaultCountrySearchViewModel @Inject constructor(
         .sortedWith(CountryPriorityCityComparator(Country("United States")).reversed())
       _state.value = State.Available
     } catch (queryException: CitySearchQueryException) {
-      _state.value = State.Error()
+      _state.value = State.Error
     }
   }
 }

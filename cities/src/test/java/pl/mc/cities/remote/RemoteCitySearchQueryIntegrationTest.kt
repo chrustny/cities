@@ -1,7 +1,8 @@
 package pl.mc.cities.remote
 
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.test.*
+import kotlinx.coroutines.test.StandardTestDispatcher
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import org.hamcrest.CoreMatchers.equalTo
@@ -28,7 +29,6 @@ class RemoteCitySearchQueryIntegrationTest {
 
   @Before
   fun setUp() {
-    Dispatchers.setMain(testDispatcher)
     mockServer = MockWebServer.createMockWebServer()
     val service = mockServer.createRetrofitService(CityService::class.java)
     query = RemoteCitySearchQuery(service)
@@ -36,7 +36,6 @@ class RemoteCitySearchQueryIntegrationTest {
 
   @After
   fun tearDown() {
-    Dispatchers.resetMain()
     mockServer.shutdown()
   }
 

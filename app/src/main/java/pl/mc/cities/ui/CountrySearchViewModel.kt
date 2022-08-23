@@ -10,8 +10,9 @@ interface CountrySearchViewModel {
   fun setQuery(query: String)
 
   sealed interface State {
+    object Idle : State
     object Loading : State
     object Available : State
-    class Error : State
+    object Error : State
   }
 }
