@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.compositeOver
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
@@ -82,12 +83,13 @@ private fun Content(viewModel: CountrySearchViewModel) {
         modifier = Modifier
           .weight(1f)
           .align(CenterVertically)
+          .testTag(TestTags.queryField)
       )
       Button(
         onClick = { viewModel.setQuery(pendingQuery) },
         colors = CitiesFlatButtonsDefaults.buttonColors(),
         elevation = CitiesFlatButtonsDefaults.elevation(),
-        modifier = Modifier.height(64.dp)
+        modifier = Modifier.height(64.dp).testTag(TestTags.queryButton)
       ) {
         Text(
           text = "Search",
@@ -151,4 +153,9 @@ private class MockCountrySearchViewModel(
   override fun setQuery(query: String) {
     //no-op
   }
+}
+
+object TestTags{
+  val queryField = "QUERY_FIELD"
+  val queryButton = "QUERY_BUTTON"
 }
